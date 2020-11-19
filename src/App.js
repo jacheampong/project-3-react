@@ -20,7 +20,7 @@ export default class App extends Component {
         <h1>React Music Match!</h1>
         <form onSubmit={this.handleSearch}>
           <label>
-            <input name="searchText" type="text" />
+            <input name="searchText" type="text" required />
           </label>
           <select value={this.state.searchType} onChange={this.handleChange}>
             <option value="artist">Artists</option>
@@ -40,9 +40,17 @@ export default class App extends Component {
     e.preventDefault();
     console.log('Handle Text: ', e.target.searchText.value)
     console.log('Handle Type: ', this.state.searchType)
+
+    // set form field to empty
+    e.target.searchText.value = ''
     
   }
 
+  /**
+   * handleChange: change state searchType to 
+   * selected dropdown value
+   * @param {*} event 
+   */
   handleChange = (event) => {
     console.log('Dropdown: ', event.target.value)
     this.setState({
