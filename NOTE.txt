@@ -53,4 +53,14 @@ https://api.musixmatch.com/ws/1.1/artist.search?q_artist=Jay-z&apikey=a4e25170f0
 
 https://api.musixmatch.com/ws/1.1/artist.search?q_artist=Drake&apikey=a4e25170f0b2049fd2a045213feaa6db
 
+###########################
+Thurs Nov 19, 2020 - Stand Up
+###########################
+musixmatch - music app
+- wireframing 
+- user stories
+- github
+- division of Task 
+- start coding 
+- no blockers yet
 
