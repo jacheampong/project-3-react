@@ -15,8 +15,8 @@ export default class App extends Component {
           </label>
           <button>SEARCH</button>
         </form>
-        <Artists artist={MUSIX.artists} />
-        <Tracks tracks={MUSIX.artists} />
+        <Artists artists={MUSIX.artists} />
+        <Tracks tracks={MUSIX.tracks} />
       </div>
     )
   }
