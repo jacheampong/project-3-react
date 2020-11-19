@@ -1,0 +1,56 @@
+API 
+
+Components
+    APP State[Artists, Album, Tracks]
+        Search
+
+        Artists (List Container)
+            Artist (List Item)
+
+        Tracks (List Container)
+            Track (List Item)
+
+        Albums (List Container)
+            Album (List Item)
+
+        Chart/Lyrics
+
+Props
+
+State
+    Artists, 
+    Album, 
+    Tracks
+        
+#################
+
+USER STORIES 
+1. As a user, I should be able to search for list of artists by name
+2. As a user, I should be able to select one of artist from list
+3. Once an artist is selected, I should be able to see artist detail 
+4. As a user, I should be able to search for list of track by name
+5. As a user, I should be able to select one track from list
+6. As a user, I should be able to select one of artist from track
+7. 
+8.
+9.
+10.
+
+---- 
+User able to search for tracks/songs
+User able to search for Lyrics
+
+Sample api calls:
+// using artist id
+https://api.musixmatch.com/ws/1.1/artist.get?artist_id=18927&apikey=a4e25170f0b2049fd2a045213feaa6db
+
+// using artist name
+https://api.musixmatch.com/ws/1.1/artist.search?q_artist=Beyonce&apikey=a4e25170f0b2049fd2a045213feaa6db
+
+https://api.musixmatch.com/ws/1.1/artist.search?q_artist=Drake&apikey=a4e25170f0b2049fd2a045213feaa6db
+
+https://api.musixmatch.com/ws/1.1/artist.search?q_artist=Jay-z&apikey=a4e25170f0b2049fd2a045213feaa6db
+
+https://api.musixmatch.com/ws/1.1/artist.search?q_artist=Drake&apikey=a4e25170f0b2049fd2a045213feaa6db
+
+
