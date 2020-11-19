@@ -1,12 +1,11 @@
-import React, { Component } from "react";
+import React, { Component } from 'react'
 import MUSIX from './MUSIX'
 import Artists from './Artists'
 import Tracks from './Tracks'
 
 export default class App extends Component {
-
   render() {
-    return(
+    return (
       <div>
         <h1>React Music Match!</h1>
         <form onSubmit={this.handleSearch}>
@@ -16,15 +15,13 @@ export default class App extends Component {
           <button>SEARCH</button>
         </form>
         <Artists artist={MUSIX.artists} />
-        <Tracks tracks={MUSIX.artists} />
+        <Tracks tracks={MUSIX.tracks} />
       </div>
     )
   }
 
   handleSearch = (e) => {
-    e.preventDefault();
+    e.preventDefault()
     console.log('Handle Search', e.target.searchText.value)
-    
   }
-
 }
