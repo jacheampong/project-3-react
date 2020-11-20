@@ -36,8 +36,12 @@ export default class App extends Component {
           </select>
           <button>SEARCH</button>
         </form>
-        <Artists artists={this.state.artists} />
-        <Tracks tracks={this.state.tracks} />
+
+        {this.state.searchType === 'artist' ? (
+          <Artists artists={this.state.artists} />
+        ) : (
+          <Tracks tracks={this.state.tracks} />
+        )}
       </div>
     )
   }
