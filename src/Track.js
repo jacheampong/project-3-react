@@ -6,6 +6,8 @@ const Track = (props) => {
       <h4>Track: {props.track.track_name}</h4>
       <ul>
         <li>Track Rating: {props.track.track_rating}</li>
+        <li>Track Album: {props.track.album_name}</li>
+        <li>Artist Name: {props.track.artist_name}</li>
       </ul>
     </>
   )

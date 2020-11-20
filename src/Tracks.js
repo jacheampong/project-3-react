@@ -7,10 +7,11 @@ class Tracks extends Component {
     const allTracks = this.props.tracks.map((track) => {
       return <Track track={track} key={track.track_id} />
     })
+
     return (
       <>
         <hr></hr>
-        <h4>Track List</h4>
+        <h3>Track List</h3>
         {allTracks}
       </>
     )
