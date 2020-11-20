@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import MUSIX from './MUSIX'
 import Artists from './Artists'
 import Tracks from './Tracks'
 import { getMusixApiCall } from './api'
@@ -35,7 +34,7 @@ export default class App extends Component {
           <button>SEARCH</button>
         </form>
         <Artists artists={this.state.artists} />
-        <Tracks tracks={MUSIX.tracks} />
+        <Tracks tracks={this.state.tracks} />
       </div>
     )
   }
@@ -52,21 +51,30 @@ export default class App extends Component {
      * update artits state with response and set 
      * input field to empty
      */
-    if (type === "artist") {
-      getMusixApiCall(text, type)
-      .then((response) => {
+    getMusixApiCall(text, type)
+    .then((response) => {
+      if (type === "artist") {
         console.log('response: ', response.message.body.artist_list);
-        // set state
+        // set artits state
         this.setState({
           artists: response.message.body.artist_list,
         })
-        console.log('after updating state')
-      })
-      .catch(e => {
-        console.log('ERROR getting artist list: ', e.message);
-      })
-    }
-
+      }
+      if (type === "track") {
+        console.log(`Looking for ${type}'s ${text}`)
+        console.log('response: ', response.message.body);
+        // set track state
+        this.setState({
+          tracks: response.message.body.track_list,
+        })
+      }
+      
+      console.log('after updating state')
+    })
+    .catch(e => {
+      console.log('ERROR getting artist list: ', e.message);
+    })
+    
     // set form field to empty
     e.target.searchText.value = ''
     

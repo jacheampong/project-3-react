@@ -159,3 +159,6 @@ class Musixmatch {
   }
 }
 
+/*** TOP CHART ***/
+https://api.musixmatch.com/ws/1.1/chart.tracks.get?chart_name=top&page=1&page_size&apikey=a4e25170f0b2049fd2a045213feaa6db
+
