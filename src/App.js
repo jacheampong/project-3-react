@@ -57,15 +57,20 @@ export default class App extends Component {
         console.log('response: ', response.message.body.artist_list);
         // set artits state
         this.setState({
-          artists: response.message.body.artist_list,
+          artists: response.message.body.artist_list 
+                    ? response.message.body.artist_list 
+                    : [],
         })
       }
       if (type === "track") {
         console.log(`Looking for ${type}'s ${text}`)
         console.log('response: ', response.message.body);
-        // set track state
+        // set track state if response true
+        // or set to empty array
         this.setState({
-          tracks: response.message.body.track_list,
+          tracks: response.message.body.track_list 
+                    ? response.message.body.track_list
+                    : [],
         })
       }
       
