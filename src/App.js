@@ -2,6 +2,10 @@ import React, { Component } from 'react'
 import Artists from './Artists'
 import Tracks from './Tracks'
 import { getMusixApiCall } from './api'
+import 'normalize.css';
+import "./App.css";
+import "materialize-css/dist/css/materialize.min.css";
+import "materialize-css/dist/js/materialize.min.js";
 
 export default class App extends Component {
   constructor(props) {
@@ -18,13 +22,13 @@ export default class App extends Component {
 
   render() {
     return (
-      <div>
-        <h1>React Music Match!</h1>
+      <div className="container">
+        <h2>🎤 Musix 🎶  Match 🎧</h2>
         <form onSubmit={this.handleSearch}>
           <label>
             <input name="searchText" type="text" required />
           </label>
-          <select value={this.state.searchType} onChange={this.handleChange}>
+          <select className="browser-default" value={this.state.searchType} onChange={this.handleChange}>
             <option value="artist">Artists</option>
             <option value="track">Tracks</option>
             <option value="album" disabled>
@@ -34,6 +38,7 @@ export default class App extends Component {
               Lyrics
             </option>
           </select>
+          <br />
           <button>SEARCH</button>
         </form>
         <Artists artists={this.state.artists} />
