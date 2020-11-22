@@ -9,11 +9,10 @@ class Tracks extends Component {
     })
 
     return (
-      <>
-        <hr></hr>
+      <div className="container">
         <h3>Track List</h3>
         {allTracks}
-      </>
+      </div>
     )
   }
 }
