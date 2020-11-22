@@ -13,11 +13,9 @@ class Artists extends Component {
                    />;
         })    
         return(
-            <div>
+            <div className="container">
                 <h3>Artists</h3>
-                <ul>
-                    {allArtists}
-                </ul>
+                {allArtists}
             </div>
         )
     }
