@@ -1,3 +1,6 @@
+
+// api.js
+
 // set api key 
 const MUSIX_API_KEY=process.env.REACT_APP_MUSIX_API_KEY
 
@@ -16,6 +19,10 @@ const getMusixApiCall = (searchText, searchType) => {
   if (searchType === "chart") {
     console.log(`Searching for ${searchType} by ${searchText}`);
     return searchTopChart(searchText);
+  }
+  if (searchType === "lyric") {
+    console.log(`In API.JS, Searching for ${searchType} by ${searchText}`);
+    return searchLyricsByName(searchText);
   }
 
 };
@@ -56,5 +63,15 @@ const searchTopChart = async (searchText) => {
   return tracks
 };
 
+/** 
+ * search lyrics by the song line
+ * @param {*} searchText 
+ */
+const searchLyricsByName = async (searchText) => {
+  const lyrics = await mxm.getLyricsMatcher({
+    q_track:`${searchText}`,
+  })
+  return lyrics
+};
 
 export { getMusixApiCall };
