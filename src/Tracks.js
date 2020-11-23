@@ -8,9 +8,13 @@ class Tracks extends Component {
       return <Track track={track} key={track.track.track_id} />
     })
 
+    const heading = (this.props.searchType === "topten") 
+    ? <h3>Top 10 List</h3>
+    : <h3>Track List</h3>
+
     return (
       <div className="container">
-        <h3>Track List</h3>
+       { heading }
         {allTracks}
       </div>
     )

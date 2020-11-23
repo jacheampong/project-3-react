@@ -13,6 +13,10 @@ const getMusixApiCall = (searchText, searchType) => {
     console.log(`Searching for ${searchType} by ${searchText}`);
     return searchTracksByName(searchText);
   }
+  if (searchType === "chart") {
+    console.log(`Searching for ${searchType} by ${searchText}`);
+    return searchTopChart(searchText);
+  }
 
 };
 
@@ -37,6 +41,19 @@ const searchTracksByName = async (searchText) => {
     })
 
     return tracks
+};
+
+/**
+ * 
+ * @param {*} searchText 
+ */
+const searchTopChart = async (searchText) => {
+  console.log('In searchTopChart => ', searchText)
+  const tracks = await mxm.getTracksChart({
+    chart_name:`${searchText}`,
+  })
+  console.log('Output tracks => ', tracks)
+  return tracks
 };
 
 

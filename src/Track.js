@@ -8,7 +8,16 @@ const Track = (props) => {
       <ul className="collection">
         <li className="collection-item avatar">
           <i className="material-icons circle green"><AlbumTwoToneIcon fontSize="large" /></i>
-          <span className="title"><b>{props.track.track.track_name}</b></span>
+          <span className="title">
+            <b>
+            <a 
+              target="_blank" 
+              rel="noreferrer"
+              href={props.track.track.track_share_url}>
+                {props.track.track.track_name}
+            </a>
+            </b>
+          </span>
           <br />
           <p>
             Artist Name: <b>{props.track.track.artist_name}</b> <br />

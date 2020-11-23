@@ -12,12 +12,21 @@ export default class App extends Component {
     super(props)
 
     this.state = {
-      searchType: 'artist',
+      searchType: 'topten',
       searchText: '',
       artists: [],
       tracks: [],
       albums: [],
     }
+  }
+
+  /**
+   * componentDidMount is invoked immediately after a 
+   * component is mounted
+   * calls callTopTen method
+   */
+  componentDidMount(){
+    this.callTopTen()
   }
 
   render() {
@@ -29,6 +38,7 @@ export default class App extends Component {
             <input name="searchText" type="text" required />
           </label>
           <select className="browser-default" value={this.state.searchType} onChange={this.handleChange}>
+            <option value="topten">Top 10</option>
             <option value="artist">Artists</option>
             <option value="track">Tracks</option>
             <option value="album" disabled>
@@ -45,7 +55,7 @@ export default class App extends Component {
         {this.state.searchType === 'artist' ? (
           <Artists artists={this.state.artists} />
         ) : (
-          <Tracks tracks={this.state.tracks} />
+          <Tracks tracks={this.state.tracks} searchType={this.state.searchType} />
         )}
       </div>
     )
@@ -98,13 +108,48 @@ export default class App extends Component {
 
   /**
    * handleChange: change state value for searchType
-   * selected dropdown value
+   * selected dropdown value. Call callTopTen()
+   * if topten dropdown is selected
    * @param {*} event
    */
   handleChange = (event) => {
     console.log('Dropdown: ', event.target.value)
     this.setState({
       searchType: event.target.value,
+      searchText: 'Top Ten'
     })
+
+    // call callTopTen 
+    if('topten' === event.target.value) {
+      this.callTopTen()
+    } else {
+      // set tracks to null
+      this.setState({
+        tracks: [],
+      })
+    }
   }
+
+  /**
+   * callTopTen 
+   */
+  callTopTen = () => {
+    getMusixApiCall("top", "chart")
+      .then((response) => {
+        // console.log(`Looking for ${type}'s ${text}`)
+        console.log('response: ', response.message.body)
+        // set track state if response true
+        // or set to empty array
+        this.setState({
+          tracks: response.message.body.track_list
+            ? response.message.body.track_list
+            : [],
+        })
+
+        console.log('after updating state')
+      })
+      .catch((e) => {
+        console.log('ERROR getting artist list: ', e.message)
+      })
+  } 
 }
