@@ -3,9 +3,14 @@ import Track from './Track'
 
 class Tracks extends Component {
   render() {
-    const allTracks = this.props.tracks.map((track) => {
+    const allTracks = this.props.tracks.map((track, index) => {
       // console.log('track id here', track.track.track_id)
-      return <Track track={track} key={track.track.track_id} />
+      return <Track 
+                track={track} 
+                key={track.track.track_id} 
+                id={index+1} 
+                searchType={this.props.searchType} 
+              />
     })
 
     const heading = (this.props.searchType === "topten") 

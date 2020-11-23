@@ -3,11 +3,15 @@ import React from 'react'
 import AlbumTwoToneIcon from '@material-ui/icons/AlbumTwoTone';
 
 const Track = (props) => {
+  const view = (props.searchType === "topten") 
+        ? <i className="material-icons circle green"><b>{props.id}</b></i>
+        : <i className="material-icons circle green"><AlbumTwoToneIcon fontSize="large" /></i>
+
   return (
     <>
       <ul className="collection">
         <li className="collection-item avatar">
-          <i className="material-icons circle green"><AlbumTwoToneIcon fontSize="large" /></i>
+        {view}
           <span className="title">
             <b>
             <a 
