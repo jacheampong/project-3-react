@@ -1,6 +1,10 @@
+
+// App.js
+
 import React, { Component } from 'react'
 import Artists from './Artists'
 import Tracks from './Tracks'
+import Lyrics from './Lyrics'
 import { getMusixApiCall } from './api'
 
 export default class App extends Component {
@@ -13,6 +17,7 @@ export default class App extends Component {
       artists: [],
       tracks: [],
       albums: [],
+      lyrics: {},
     }
   }
 
@@ -27,21 +32,24 @@ export default class App extends Component {
           <select value={this.state.searchType} onChange={this.handleChange}>
             <option value="artist">Artists</option>
             <option value="track">Tracks</option>
-            <option value="album" disabled>
-              Albums
-            </option>
-            <option value="lyric" disabled>
-              Lyrics
-            </option>
+            <option value="album" disabled>Albums</option>
+            <option value="lyric">Lyrics</option>
           </select>
           <button>SEARCH</button>
         </form>
 
-        {this.state.searchType === 'artist' ? (
-          <Artists artists={this.state.artists} />
-        ) : (
-          <Tracks tracks={this.state.tracks} />
-        )}
+        {/* use switch function to determine component to render */}
+        {(() => {
+          switch (this.state.searchType) {
+            case 'topten':  return <Tracks tracks={this.state.tracks} />;
+            case 'artist':   return <Artists artists={this.state.artists} />;
+            case 'track': return <Tracks tracks={this.state.tracks} />;
+            case 'lyric': return <Lyrics lyrics={this.state.lyrics} />;
+            // case “album”:  return <Artists artists={this.state.tracks} />;
+            default:      return <Tracks tracks={this.state.tracks} />;
+          }
+        })()}
+
       </div>
     )
   }
@@ -61,6 +69,7 @@ export default class App extends Component {
     getMusixApiCall(text, type)
       .then((response) => {
         if (type === 'artist') {
+          console.log(`In Artist, Looking for ${type}'s ${text}`)
           console.log('response: ', response.message.body.artist_list)
           // set artits state
           this.setState({
@@ -70,7 +79,7 @@ export default class App extends Component {
           })
         }
         if (type === 'track') {
-          console.log(`Looking for ${type}'s ${text}`)
+          console.log(`In Track, Looking for ${type}'s ${text}`)
           console.log('response: ', response.message.body)
           // set track state if response true
           // or set to empty array
@@ -80,13 +89,23 @@ export default class App extends Component {
               : [],
           })
         }
-
+        if (type === 'lyric') {
+          console.log(`In Lyric, Looking for ${type} containing ${text}`)
+          console.log('response, body: ', response.message.body)
+          console.log('response, lyric_list: ', response.message.body.lyrics.lyrics_body)
+          // set lyric state if response true
+          // or set to empty array
+          this.setState({
+            lyrics: response.message.body.lyrics
+              ? response.message.body.lyrics
+              : {},
+          })
+        }
         console.log('after updating state')
       })
       .catch((e) => {
         console.log('ERROR getting artist list: ', e.message)
       })
-
     // set form field to empty
     e.target.searchText.value = ''
   }
