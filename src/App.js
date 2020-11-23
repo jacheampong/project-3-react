@@ -57,7 +57,7 @@ export default class App extends Component {
           switch (this.state.searchType) {
             case "topten":  return <Tracks tracks={this.state.tracks} />;
             case "artist":   return <Artists artists={this.state.artists} />;
-            case "track": return <Tracks artists={this.state.tracks} />;
+            case "track": return <Tracks tracks={this.state.tracks} />;
             // case "lyric": return <Lyrics lyrics={this.state.lyrics} />;
             // case "album":  return <Artists artists={this.state.tracks} />;
             default:      return <Tracks tracks={this.state.tracks} />;
