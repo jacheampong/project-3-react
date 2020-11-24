@@ -112,17 +112,16 @@ node-fetch JavaScript Library was used to access the data. Sample calls are as b
 
 ## 6. User Stories and their implementation status
 
-1. As a user, I should be able to search for list of artists by name
-2. As a user, I should be able to select one of artist from list
-3. Once an artist is selected, I should be able to see artist details 
-4. As a user, I should be able to search for list of track by name
-5. As a user, I should be able to select one track from list
-6. As a user, I should be able to select one of artist from track
-7. As a user, I should be able to search for lyrics by embedded keyword
-8. As a user, I should be able to be flagged above the lyrics if it has explicit content
-9. As a user, I should be able to search for list of albums by name
-10. As a user, I should be able to select one of albums from list
-11. Once an album is selected, I should be able to see album details 
+1. As a user, I should be able to search for list of artists by name **Status: Completed**
+2. As a user, I should be able to select one of artist from list **Status: Completed**
+3. Once an artist is selected, I should be able to see artist details  **Status: Completed**
+4. As a user, I should be able to search for list of track by name **Status: Completed**
+5. As a user, I should be able to select one track from list **Statu:s Completed**
+6. As a user, I should be able to select one of artist from track **Status: Completed**
+7. As a user, I should be able to search for lyrics by embedded keyword **Status: Completed**
+8. As a user, I should be able to be flagged above the lyrics if it has explicit content **Status: Completed**
+9. As a user, I should be able to see the top 10 songs on the chart in the homepage **Status: Complete**
+10. As a user, I should be able to search for albums **Status: Future Enhancement**
 
 ## 7. Compliance to MVP (Minimum Viable Product) Requirement 🔴 
 
