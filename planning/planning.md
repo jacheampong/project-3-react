@@ -40,13 +40,21 @@ Testing to confirm GET requests was done using Postman and the browser console:
 
 ## 4. User Stories
 
-1. As a user, I should be able to search for a list of artists by name.
-2. As a user, I should be able to select one of the artists from the list.
-3. When I select an artist, I should be able to see artist details.
-4. As a user, I should be able to search a list of tracks by artist name.
-5. As a user, I should be able to select one track from the list.
-6. As a user, I should be able to select an artist from the list.
-7. As a user, I should be able to search for an album by the name.
-8. As a user, I should be able to select an album from a list of albums.
-9. As a user, I should be able to search for lyrics using a search term.
-10. As a user, I should be able to see the lyrics shown on the page.
+1. As a user, I should be able to search for list of artists by name
+2. As a user, I should be able to select one of artist from list
+3. Once an artist is selected, I should be able to see artist details
+4. As a user, I should be able to search for list of track by name
+5. As a user, I should be able to select one track from list
+6. As a user, I should be able to select one of artist from track
+7. As a user, I should be able to search for lyrics by embedded keyword
+8. As a user, I should be able to be flagged above the lyrics if it has explicit content
+9. As a user, I should be able to see the top 10 songs on the chart in the homepage
+10. As a user, I should be able to search for albums
+
+## 5. Individual Team Member Responsibilities
+
+- **Jonathan Acheampong** - App Component, Project Planning, CSS, GIT
+
+- **David Lane** - Tracks/Album Component, Planning Doc
+
+- **Mohan Palat** - Artist/Lyrics Component, README Doc
