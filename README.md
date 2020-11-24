@@ -1,5 +1,5 @@
 
-# Project 3. **🎤 Musix 🎶 Match 🎧** The Music Search Application
+# Project 3. <span style="color:red">🎤 Musix 🎶 Match 🎧 <span style="color:blue">The Music Search Application
 
 ## 1. Technologies used
 
@@ -12,6 +12,8 @@
 * Deployed at https://**<== Project ==>**.herokuapp.com/
 
 ## 2. Development Team
+
+ 
 
 * Jonathan Acheampong (Lead)
 * David Lane
