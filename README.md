@@ -9,7 +9,8 @@
 * Postman Application for API Testing (accessing data available on musixmatch.com) 
 * Heroku cloud application platform for deployment
 * React JavaScript library was used for the front end development
-* Deployed at https://react-musix-p3.herokuapp.com/
+* Deployed at [Deployed at Heroku here](https://https://react-musix-p3.herokuapp.com/)
+
 
 ## 2. Development Team
 
