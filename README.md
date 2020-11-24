@@ -4,7 +4,7 @@
 ## 1. Technologies used
 
 * HTML, CSS, JavaScript, Google Chrome
-* Materialize framework for styling (based on Google Material Design)
+* Materialize framework for styling (based on Google Material Design) with [react-materialize](https://github.com/react-materialize/react-materialize) and [materializecss](https://materializecss.com/)
 * AJAX and AXIOS for API Access
 * Postman Application for API Testing (accessing data available on musixmatch.com) 
 * Heroku cloud application platform for deployment
@@ -25,12 +25,12 @@ Many music lovers were looking for an application which allows them wild card se
 
 ### 3.2 Solution and who would use it
 
-It will be used by the many music lovers craving for information. The data is available on musixmatch.com. We needed to provide the search and resultson the web formatted in a way to make it a pleasent experience.
+It will be used by the many music lovers craving for information. The data is available on musixmatch.com. We needed to provide the search and results on the web formatted in a way to make it a pleasant experience.
 
-#### 3.2.1 UI Soutioning
-Used HTML, CSS, JavaScript, Google Chrome and Materialize Framework for styling 
+#### 3.2.1 UI Solutioning
+Used HTML, CSS, JavaScript, Google Chrome and Materialize Framework with [react-materialize](https://github.com/react-materialize/react-materialize) and [materializecss](https://materializecss.com/) for styling.
 
-#### 3.2.2 API Soutioning
+#### 3.2.2 API Solutioning
 Provider of choice was musixmatch.com. 
 The following list of operations were used from list of calls provided. 
 <table>
@@ -71,13 +71,14 @@ The following list of operations were used from list of calls provided.
 </table>
 
 #### 3.2.3 Solutioning Cloud Deployment to AWS
-Heroku Cloud Application Platform for Deploment
+Heroku Cloud Application Platform for Deployment.
 
 ## 4. Learning Experience
 
-* <== Experience **with API workaround** ==>
-* <== Experience **with Materialize** ==>
-* <== Experience ==>
+* API Library used to access [Musix Match](https://www.musixmatch.com/) to fetch the data required for Musix Match Application. We could not work work with the API the site provided and had to use a wrapper library node-fetch JavaScript Library and it is a challenge getting everything to work.
+* Experience with [react-materialize](https://github.com/react-materialize/react-materialize) and [materializecss](https://materializecss.com/). Ability to render beautiful pages developed without the struggle with just base css.
+* Git Workflow. Effectively using the branching and merging for collaboration. Multiple branches like artists, tracks, lyrics and albums which confined issues and quirks to each member of the team until ready and then merged.
+* React Library and JavaScript XML(JSX) which makes it easy for us to write HTML in React. 
 
 ## 5. Approach & Design Components - Wireframe, API
 
@@ -85,11 +86,27 @@ Heroku Cloud Application Platform for Deploment
 
 #### 5.1.1 Wireframe - Main Page
 ![Wireframe - Main](./images/REACT_JS_MUSIXMATCH_MAIN.png) 
-#### 5.1.1 Wireframe - Details Page
+#### 5.1.2 Wireframe - Details Page
 ![Wireframe - Detail](./images/REACT_JS_MUSIXMATCH_DETAIL.png) 
 ### 5.2 API Details
 
-**<== Joathan ==>**
+node-fetch JavaScript Library was used to access the data. Sample calls are as below
+```JavaScript
+// Artists
+  getArtistsChart(query) {
+    return this.request(
+      '/chart.artists.get',
+      query
+    )
+  }
+// Tracks
+  getAlbumTracks(query) {
+    return this.request(
+      '/album.tracks.get',
+      query
+    )
+  }
+```
 
 ## 6. User Stories and their implementation status
 
@@ -111,21 +128,18 @@ Heroku Cloud Application Platform for Deploment
 
 * A GitHub repo with your React app **Status: Complete**
 * You must use React and leverage the API in the above requirements. **Status: Complete**
-* You must communicate with the API and render the UI accordingly with the information received (using axios). **Status: Complete**
-* Review the Rubric for the specifics of how your project will be graded. **Status: <=== TBD ===>**
+* You must communicate with the API and render the UI accordingly with the information received (using AXIOS). **Status: Complete**
 
 ### 7.2 Collaboration
 * Every team member must have roughly the same number of individual commits in the commit history for your app (dividing responsibilities between different parts of the app is fine, but every team member must have commits in the project). **The team worked very well by dividing and synchronizing the available work as chunks**
-* Every team must follow a Git Workflow **leveraging the GIT branches - main, track, artist, album and lyric and finally merging them effiiciently** 
+* Every team must follow a Git Workflow **leveraging the GIT branches - main, track, artist, album and lyric and finally merging them efficiently** 
 
 ### 7.3 Deployment
 Your React app must be deployed to Heroku, GitHub Pages, or Surge. Applications that are not deployed will be considered incomplete. **Our application was deployed to production using Heroku**
 
 ## 8. Unsolved Issues and Future Enhancements
 
-**<=== ? ===>**
-
-Maybe Albums
-Third Party API to render images of the artists
+* We had an issue implementing albums which for some reason was not allowed to be searched directly unlike the other components. We need to search using tracks and we ran out of time to implemented without jeopardizing project completion and deployment. This will be taken up in the future. 
+* In the Artist display cards, we were not able to render the picture of the artist using the data receieved back from the current API. In future we are looking forward to use a third party API to do this.
 
 
