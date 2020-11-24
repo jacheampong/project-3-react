@@ -21,11 +21,12 @@ A wireframe showing a dropdown box, text search input field, and space to render
 ## 2. API
 
 The API was chosen based on project requirements and researching the best APIs to render search requests.
-Click here to visit [API.](https://api.musixmatch.com)
+Click here to visit Musixmatch webpage [API.](https://developer.musixmatch.com/)
 
 ### 2.1. Confirmation for API
 
-Testing to confirm GET requests was done using Postman and the browser console.
+Testing to confirm GET requests was done using Postman and the browser console:
+![Postman Testing](../images/Postman.png)
 
 ## 3. Wireframing
 
