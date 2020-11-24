@@ -31,11 +31,11 @@ Testing to confirm GET requests was done using Postman and the browser console.
 
 #### 3.1. Wireframe - Main Page
 
-![Wireframes](./images/REACT_JS_MUSIXMATCH_MAIN.png)
+![Wireframes](../images/REACT_JS_MUSIXMATCH_MAIN.png)
 
 #### 3.2. Wireframe - Details Page
 
-![Wireframes](./images/REACT_JS_MUSIXMATCH_DETAIL.png)
+![Wireframes](../images/REACT_JS_MUSIXMATCH_DETAIL.png)
 
 ## 4. User Stories
 
